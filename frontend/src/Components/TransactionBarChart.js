@@ -14,7 +14,7 @@ function TransactionBarChart({ selectedMonth }) {
       const options = {
         method: "GET"
       }
-      const res = await fetch(`http://localhost:3001/getquantity?month=${selectedMonth}`, options)
+      const res = await fetch(`${process.env.REACT_APP_IP_ADDRESS}/getquantity?month=${selectedMonth}`, options)
       const data = await res.json()
       setData(data)
       console.log("qtydata", data)

@@ -29,7 +29,7 @@ function TransactionTable({ selectedMonth, setSelectedMonth }) {
             const options = {
                 method: "GET"
             }
-            const res = await fetch(`http://localhost:3001/gettransactions?search=${searchInput}&page=${pageNum}`, options)
+            const res = await fetch(`${process.env.REACT_APP_IP_ADDRESS}/gettransactions?search=${searchInput}&page=${pageNum}`, options)
             const data = await res.json()
             setTransactionData(data)
 
@@ -97,9 +97,9 @@ function TransactionTable({ selectedMonth, setSelectedMonth }) {
             <div className="transaction-table pages-align" >
                 <p>Page No: {pageNum}</p>
                 <div style={{ display: "flex" }}>
-                    <button style={{ backgroundColor: "transparent", border: "none", cursor:"pointer" }} onClick={onClickNext}>Next</button>
+                    <button style={{ backgroundColor: "transparent", border: "none", cursor: "pointer" }} onClick={onClickNext}>Next</button>
                     <p style={{ marginLeft: "2px", marginRight: "2px" }}> - </p>
-                    <button style={{ backgroundColor: "transparent", border: "none", cursor:"pointer" }} onClick={onClickPrev}>Previous</button>
+                    <button style={{ backgroundColor: "transparent", border: "none", cursor: "pointer" }} onClick={onClickPrev}>Previous</button>
                 </div>
                 <p>Per Page: 10</p>
             </div>

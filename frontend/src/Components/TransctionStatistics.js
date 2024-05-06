@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "./TransctionStatistics.css"
 
-function TransctionStatistics ({ selectedMonth }){
+function TransctionStatistics({ selectedMonth }) {
 
     const [statsticsData, setStatsticsData] = useState({})
 
@@ -10,7 +10,7 @@ function TransctionStatistics ({ selectedMonth }){
             const options = {
                 method: "GET"
             }
-            const res = await fetch(`http://localhost:3001/getmonthstatisctics?month=${selectedMonth}`, options)
+            const res = await fetch(`${process.env.REACT_APP_IP_ADDRESS}/getmonthstatisctics?month=${selectedMonth}`, options)
             const data = await res.json()
             setStatsticsData(data)
             console.log("statsticsData", data)
@@ -24,8 +24,8 @@ function TransctionStatistics ({ selectedMonth }){
         fetchtransactionsStatisctics()
     }, [selectedMonth])
 
-    
-    return(
+
+    return (
         <div className="transaction-statics">
             <h2>Statistics - {selectedMonth}</h2>
             <div className="total-items-details">
@@ -34,7 +34,7 @@ function TransctionStatistics ({ selectedMonth }){
                     <p>Total sold item</p>
                     <p>Total not sold item</p>
                 </div>
-                <div style={{marginLeft:"10px"}}>
+                <div style={{ marginLeft: "10px" }}>
                     <p>{Math.ceil(statsticsData?.soldData?.totalSales)}</p>
                     <p>{statsticsData?.soldData?.transactionCount}</p>
                     <p>{statsticsData?.unSoldData?.transactionCount}</p>
