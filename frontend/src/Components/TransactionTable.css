@@ -1,0 +1,51 @@
+.search-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .search-box{
+    font-size: 16px;
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 20px;
+    background-color: #FFFDD0;
+    font-weight: 700;
+  }
+  .options-months{
+    background-color: lightsalmon;
+    font-size: 16px;
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+
+  .transaction-table {
+    border-collapse: separate; /* Ensure borders are separate */
+    border-spacing: 0; /* Remove default spacing between cells */
+    width: 70%; /* Set the desired width */
+    margin-left: auto; /* Automatically sets the left margin */
+    margin-right: auto; /* Automatically sets the right margin */
+    text-align: center; /* Center aligns the content within table cells */
+    margin-top: 40px;
+    
+  }
+
+  .transaction-table th, .transaction-table td {
+    border: 1px solid black; /* Adds borders to table cells */
+    padding: 8px; /* Adds padding inside table cells */
+    text-align: left; /* Aligns text to the left within table cells */
+    background-color: #FFFDD0;
+  }
+  .my-table th {
+    background-color: #f2f2f2; /* Adds background color to table headers */
+    
+  }
+  
+  
+  .pages-align{
+    margin-top: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+  }
