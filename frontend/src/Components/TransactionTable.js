@@ -39,8 +39,12 @@ function TransactionTable({ selectedMonth, setSelectedMonth }) {
     }
 
     useEffect(() => {
-        fetchtransactions()
-    }, [searchInput, pageNum])
+        const fetchTransactionsAndUpdate = async () => {
+            await fetchtransactions();
+        };
+
+        fetchTransactionsAndUpdate();
+    }, [searchInput, pageNum]);
 
     console.log(searchInput, "searchInput")
 

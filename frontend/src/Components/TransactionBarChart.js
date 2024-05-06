@@ -63,13 +63,22 @@ function TransactionBarChart({ selectedMonth }) {
 
   console.log(quantities, "quantities")
 
-  useEffect(() => {
-    fetchQuantity()
-  }, [selectedMonth])
+  // useEffect(() => {
+  //   fetchQuantity()
+  // }, [selectedMonth])
+
+  // useEffect(() => {
+  //   updateQuantity()
+  // }, [data])
 
   useEffect(() => {
-    updateQuantity()
-  }, [data])
+    const fetchAndUpdateQuantity = async () => {
+      await fetchQuantity();
+      updateQuantity();
+    };
+
+    fetchAndUpdateQuantity();
+  }, [selectedMonth, data]); // Include selectedMonth and data as dependencies
 
   // Process data to calculate price range and number of items
   const processData = (data) => {

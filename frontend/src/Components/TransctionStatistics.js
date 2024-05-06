@@ -21,7 +21,10 @@ function TransctionStatistics({ selectedMonth }) {
     }
 
     useEffect(() => {
-        fetchtransactionsStatisctics()
+        const fetchStatiscticsAndUpdate = async () => {
+            await fetchtransactionsStatisctics()
+        }
+        fetchStatiscticsAndUpdate()
     }, [selectedMonth])
 
 
